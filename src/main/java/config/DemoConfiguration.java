@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.yammer.dropwizard.config.Configuration;
 
-public class DemoConfiguration extends Configuration{
+public class DemoConfiguration extends Configuration {
 
 	@NotEmpty
 	private String connectionUrl;
@@ -19,5 +19,5 @@ public class DemoConfiguration extends Configuration{
 	public String getConnectionUrl() {
 		return connectionUrl;
 	}
-	
+
 }

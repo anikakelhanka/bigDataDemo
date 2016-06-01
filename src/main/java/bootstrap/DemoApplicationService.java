@@ -1,7 +1,5 @@
 package bootstrap;
 
-import java.sql.Connection;
-
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
@@ -23,9 +21,12 @@ public class DemoApplicationService extends Service<DemoConfiguration> {
 
 	@Override
 	public void run(DemoConfiguration config, Environment env) throws Exception {
+		
 		// TODO Auto-generated method stub
-		Connection connection = new DBConnectionManager().getConnection(config
-				.getConnectionUrl());
+		DBConnectionManager.getInstance().setConnectionUrl(
+				config.getConnectionUrl());
+		
+		
 	}
 
 }

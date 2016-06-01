@@ -6,10 +6,34 @@ import java.sql.SQLException;
 
 public class DBConnectionManager {
 
-	public Connection getConnection(String url) throws Exception {
+	private String connectionUrl;
+
+	public String getConnectionUrl() {
+		return connectionUrl;
+	}
+
+	public void setConnectionUrl(String connectionUrl) {
+		this.connectionUrl = connectionUrl;
+	}
+
+	private static DBConnectionManager instance;
+
+	private DBConnectionManager() {
+	}
+
+	public static DBConnectionManager getInstance() {
+
+		if (instance == null)
+			instance = new DBConnectionManager();
+
+		return instance;
+
+	}
+
+	public Connection getConnection() throws Exception {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			return DriverManager.getConnection(url, "infoobjects",
+			return DriverManager.getConnection(connectionUrl, "infoobjects",
 					"infoobjects");
 
 		} catch (SQLException e) {
