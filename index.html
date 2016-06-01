@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ng="http://angularjs.org" ng-app="rsBaseApp"
+	ng-controller="rsBaseMainCtrl">
+
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Welcome to Demo App</title>
+<!-- bootstrap -->
+<base href="/demo">
+
+<!-- <script src="lib/toggle.js"></script> -->
+<script src="app.js"></script>
+
+</head>
+
+<body class="">
+	<!--=== Smart Broker Application ===-->
+	<div ui-view></div>
+	<!-- /Smart Broker Application ===-->
+
+
+
+	<script>
+		var h2 = $(window).height() - 276;
+		$('body').append(
+				"<style>\[ui-i18n\=\'en\'\]\{height\: " + h2
+						+ "px !important\;\}<style>");
+	</script>
+
+</body>
+
+</html>
